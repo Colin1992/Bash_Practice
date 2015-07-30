@@ -31,9 +31,9 @@ do
 		then
 			echo "$x updated successfully!"
 		else
-			echo "Unable to update $x!"
+			echo "Unable to update $x!" >&2
 		fi
 	else
-		echo "Unable to move into $x!"
+		echo "Unable to move into $x!" >&2
 	fi
 done
