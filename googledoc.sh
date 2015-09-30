@@ -8,6 +8,6 @@ if (("$VAR" >= 50)); then
 
 else
 
-    echo "Did it work?" | mail -s "Checking" colinhamilton579@gmail.com
+    echo "content of message" | mail -s "Subject" example@email.com
 
 fi

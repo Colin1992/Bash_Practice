@@ -1,13 +1,13 @@
 #!/bin/bash 
 
-# Script to update all wordpress sites in the public_html
+# Script to export all wordpress databases in the public_html
 
 
 # Help flag
 if [ "$1" == "-h" ];
 then
 	echo ""
-	echo "Site's won't update unless wordpress command line is installed with the alias 'wpcli'."
+	echo "Site's won't export db unless wordpress command line is installed with the alias 'wpcli'."
 	echo ""
 	exit 0
 fi
