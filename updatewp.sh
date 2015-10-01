@@ -25,10 +25,14 @@ do
 	if [[ $? == 0 ]];
 	then
 		# wpcli error doesn't register as an error, for that reason I had to run grep after for the if-statement
-		wpcli --update-all 2>/dev/null | grep -i "success" >/dev/null 2>&1
+		wpcli core update-db 2>/dev/null | grep -i "success" >/dev/null 2>&1
 		# if-statement to see if the command can be run successfully
 		if [[ $? == 0 ]];
 		then
+			# previous version of wpcli I had used had a function called 'wpcli --update-all' that made this easier.  Now I have to update plugins, themes, database, and core separately.
+			wpcli core update 2>/dev/null | grep -i "success" >/dev/null 2>&1
+			wpcli plugin update --all 2>/dev/null | grep -i "success" >/dev/null 2>&1
+			wpcli theme update --all 2>/dev/null | grep -i "success" >/dev/null 2>&1
 			echo "$x updated successfully!"
 		else
 			echo "Unable to update $x!" >&2
